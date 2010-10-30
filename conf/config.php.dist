@@ -1,0 +1,8 @@
+<?php
+//GRANT ALL ON security_demo.* TO 'security'@'localhost' identified by 'secure_pass';
+
+$dsn = 'mysql:dbname=security_demo;host=localhost';
+$user = 'security';
+$pass = 'secure_pass';
+
+$db = new PDO($dsn, $user, $pass);

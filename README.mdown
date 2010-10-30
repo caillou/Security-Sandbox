@@ -1,0 +1,10 @@
+# Security Sandbox
+
+*WARNING:* Under no circumstances should you use this code in a productive environment. This Project is *for educational purpose only* and it is *highly unsecured*!!!
+
+## Installation
+
+### Submodule
+
+### Config
+
