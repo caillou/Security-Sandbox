@@ -10,10 +10,19 @@ The brilliant [QueryPath Libaray][qp] vendor library. The library has been bundl
 
     $ git submodule init && git submodule update
 
-### Create DB
-
 ### Config
 
+There is a boilerplate config file for the db connection. Just copy and edit it:
+
+    $ cp ./conf/config.php.dist ./conf/config.php
+
+### Create DB
+
+Now that you have a `db_name` and a `db_user` you can just initialize the app:
+
+    $ mysql -u db_user db_name < ./conf/init-db.sql
+
+Have fun hacking it now!
 
 [qp]: http://querypath.org/
 [gitsub]: http://book.git-scm.com/5_submodules.html
