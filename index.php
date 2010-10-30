@@ -19,4 +19,4 @@ http://www.owasp.org/index.php/File:OWASP_T10_-_2010_rc1.pdf
  9. Insecure Cryptographic Storage
 10. Insufficient Transport Layer Protection
 
-http://svn.pierrespring.com/demos/security
+http://github.com/caillou/Security-Sandbox
