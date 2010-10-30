@@ -1,5 +1,5 @@
 <?php
-require '../lib/QueryPath/QueryPath.php';
+require '../lib/vendor/querypath/src/QueryPath/QueryPath.php';
 require '../conf/config.php';
 
 header("Content-Type: text/plain");

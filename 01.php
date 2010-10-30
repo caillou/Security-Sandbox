@@ -7,7 +7,7 @@
 # the interpreter into executing unintended commands or accessing unauthorized data.
 
 session_start();
-require './lib/QueryPath/QueryPath.php';
+require './lib/vendor/querypath/src/QueryPath/QueryPath.php';
 
 // get the $db
 require './conf/config.php';
