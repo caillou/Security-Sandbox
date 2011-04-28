@@ -6,7 +6,7 @@
 
 ### Submodule
 
-The brilliant [QueryPath Libaray][qp] vendor library. The library has been bundled as a a [git submodule] [gitsub]. In order to get it into the project, you have to run the following command in the root of your project:
+The brilliant [QueryPath Libaray][qp] vendor library. The library has been bundled as a a [git submodule][gitsub]. In order to get it into the project, you have to run the following command in the root of your project:
 
     $ git submodule init && git submodule update
 
