@@ -2,6 +2,11 @@
 
 //ini_set('session.cookie_httponly', true);
 
+if (!isset($actions)) {
+    $actions = array();
+}
+array_push($actions, 'update_message');
+
 ob_start();
 require './01.php';
 ob_end_clean();
@@ -71,3 +76,4 @@ function get_latest_messages() {
 }
 
 //<script>document.write(document.cookie);</script>
+// evil.lo

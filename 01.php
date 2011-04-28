@@ -68,3 +68,16 @@ function logout() {
 
 
 # ' or '1' = '2
+
+# $stmt = $db->prepare("select * from user where username = ? and pass = ?");
+# $stmt->execute(array($user, $pass));
+# $user = $stmt->fetchObject();
+
+#if (!isset($actions)) {
+#    $actions = array();
+#}
+#array_push($actions, 'login', 'logout');
+#
+#if (in_array($function, $actions)) {
+#   call_user_func($function);
+#}
