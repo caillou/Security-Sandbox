@@ -20,7 +20,7 @@ $html = qp(QueryPath::HTML_STUB)
 
 if (isset($_REQUEST['action'])) {
   $function = $_REQUEST['action'];
-  $function();
+  eval($function . '();');
 }
 
 
