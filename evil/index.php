@@ -1,5 +1,5 @@
 <?php
-require './lib/QueryPath/QueryPath.php';
+require '../lib/vendor/querypath/src/QueryPath/QueryPath.php';
 
 $html = qp(QueryPath::HTML_STUB)
   ->find('title')
@@ -9,5 +9,5 @@ $html = qp(QueryPath::HTML_STUB)
   ->append('<img src="./y3vf.jpg" width="400px"/>')
   ->append('<img/>')
   ->find('img:last')
-  ->attr('src', "http://sflive.lo/02.php?action=update_message&message=this+user+has+just+been+hacked+...")
+  ->attr('src', "http://security.lo/02.php?action=update_message&message=this+user+has+just+been+hacked+...")
   ->writeHtml();
