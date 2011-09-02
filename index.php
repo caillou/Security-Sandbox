@@ -10,8 +10,8 @@ http://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 
  1. Injection *
  2. Cross-Site Scripting (XSS) *
- 3. Broken Authentication and Session Management
- 4. Insecure Direct Object References *
+ 3. Broken Authentication and Session Management *
+ 4. Insecure Direct Object References
  5. Cross-Site Request Forgery (CSRF) *
  6. Security Misconfiguration (NEW)
  7. Insecure Cryptographic Storage *
