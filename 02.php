@@ -22,8 +22,7 @@ if (is_logged_in()) {
     ->append('<input type="submit" value="update"/>');
 }
 
-$html->find(':root body')
-  ->append(get_latest_messages());
+append_latest_messages();
 
 $html->writeHTML();
 
@@ -51,7 +50,7 @@ function update_message() {
   
 }
 
-function get_latest_messages() {
+function append_latest_messages() {
   global $db;
   global $html;
   
@@ -73,7 +72,6 @@ function get_latest_messages() {
       ->html($tweet->message);
   }
   
-  return '';
 }
 
 //<script>document.write(document.cookie);</script>
