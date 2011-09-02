@@ -13,57 +13,57 @@ require './lib/vendor/querypath/src/QueryPath/QueryPath.php';
 require './conf/config.php';
 
 $html = qp(QueryPath::HTML_STUB)
-  ->find('title')
-  ->text('Security: Injections')
-  ->find(':root body')
-  ->append('<h1/><form/>');
+    ->find('title')
+    ->text('Security: Injections')
+    ->find(':root body')
+    ->append('<h1/><form/>');
 
 if (isset($_REQUEST['action'])) {
-  $function = $_REQUEST['action'];
-  eval($function . '();');
+    $function = $_REQUEST['action'];
+    eval($function . '();');
 }
 
 
 if (isset($_SESSION['user'])) {
-  $html->find(':root h1')
-    ->text('Hi ' . $_SESSION['user']->username)
-    ->parent()->find('form')
-    ->append('<input type="hidden" name="action" value="logout"/>')
-    ->append('<input type="submit" value="logout"/>');
+    $html->find(':root h1')
+        ->text('Hi ' . $_SESSION['user']->username)
+        ->parent()->find('form')
+        ->append('<input type="hidden" name="action" value="logout"/>')
+        ->append('<input type="submit" value="logout"/>');
 } else {
-  $html->find(':root h1')
-    ->text('Please Login')
-    ->parent()->find('form')
-    ->append('<input type="hidden" name="action" value="login"/>')
-    ->append('<label for="username">User:</label>')
-    ->append('<input type="text" name="username"/>')
-    ->append('<label for="pass">Pass:</label>')
-    ->append('<input type="password" name="pass"/>')
-    ->append('<input type="submit" value="login"/>');
+    $html->find(':root h1')
+        ->text('Please Login')
+        ->parent()->find('form')
+        ->append('<input type="hidden" name="action" value="login"/>')
+        ->append('<label for="username">User:</label>')
+        ->append('<input type="text" name="username"/>')
+        ->append('<label for="pass">Pass:</label>')
+        ->append('<input type="password" name="pass"/>')
+        ->append('<input type="submit" value="login"/>');
 }
 
 $html->writeHTML();
 
 function login() {
-  global $db;
-  $user = $_REQUEST['username'];
-  $pass = md5($_REQUEST['pass']);
-  $sql = "select * from user where username = '$user' and pass = '$pass'";
+    global $db;
+    $user = $_REQUEST['username'];
+    $pass = md5($_REQUEST['pass']);
+    $sql = "select * from user where username = '$user' and pass = '$pass'";
 
-  $user = $db->query($sql)->fetchObject();
-  
-  if ($user) {
-    $_SESSION['user'] = $user;
-  } else {
-    global $html;
-    $html->find(':root h1')
-      ->after('<div style="color:red;">login failed</div>');
-  }
+    $user = $db->query($sql)->fetchObject();
+
+    if ($user) {
+        $_SESSION['user'] = $user;
+    } else {
+        global $html;
+        $html->find(':root h1')
+            ->after('<div style="color:red;">login failed</div>');
+    }
 }
 
 function logout() {
-  session_unset();
-  session_destroy();
+    session_unset();
+    session_destroy();
 }
 
 
@@ -76,11 +76,11 @@ function logout() {
 # phpinfo
 # echo '<pre>' . `tree`; die
 
-#if (!isset($actions)) {
-#    $actions = array();
-#}
-#array_push($actions, 'login', 'logout');
-#
-#if (in_array($function, $actions)) {
-#   call_user_func($function);
-#}
+# if (!isset($actions)) {
+#     $actions = array();
+# }
+# array_push($actions, 'login', 'logout');
+# 
+# if (in_array($function, $actions)) {
+#    call_user_func($function);
+# }
