@@ -73,6 +73,9 @@ function logout() {
 # $stmt->execute(array($user, $pass));
 # $user = $stmt->fetchObject();
 
+# phpinfo
+# echo '<pre>' . `tree`; die
+
 #if (!isset($actions)) {
 #    $actions = array();
 #}
