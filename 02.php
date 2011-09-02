@@ -45,9 +45,10 @@ function update_message() {
   
   $u = get_username();
   $m = $_REQUEST['message'];
+  $stmt = $db->prepare("insert into tweets (username, message) values (?, ?);");
+  $stmt->execute(array($u, $m));
+  $user = $stmt->fetchObject();
   
-  $sql = "insert into tweets (username, message) values ('$u', '$m');";
-  $db->query($sql);
 }
 
 function get_latest_messages() {
